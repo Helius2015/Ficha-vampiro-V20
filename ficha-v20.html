@@ -1661,7 +1661,7 @@
     </div>
     <div class="sheet-col" style="width:30px">
     </div>
-    <div class="sheet-col" style="width:140px; line-height:17px">
+    <div class="sheet-col" style="width:90px; line-height:36px">
         <br>
         <input type="radio" name="attr_CorC" value="Consciencia" class=" CorC1" /> <h4 class=" CorC1">Consciencia</h4>
         <input type="radio" name="attr_CorC" value="Conviccion" class=" CorC2" checked/> <h4 class=" CorC2">Convicción</h4><br><br>
@@ -1670,7 +1670,7 @@
         <h4>Coraje</h4>
     </div>
 	
-    <div class="sheet-col" style="width:88px; line-height:17px">
+    <div class="sheet-col" style="width:88px; line-height:30px">
         <br>
         <div class="sheet-row">
             <input type="radio" name="attr_C_C" value="1" checked/>
@@ -1680,7 +1680,6 @@
 			<span></span> <input type="radio" name="attr_C_C" value="5" />
 			<span></span>
         </div>
-		
         <br><br><div class="sheet-row">
             <input type="radio" name="attr_S_I" value="1" checked/>
 			<span></span> <input type="radio" name="attr_S_I" value="2" />
@@ -1689,7 +1688,7 @@
 			<span></span> <input type="radio" name="attr_S_I" value="5" />
 			<span></span>
         </div>
-		
+	
         <br><br><div class="sheet-row">
             <input type="radio" name="attr_Coraje" value="1" checked/>
 			<span></span> <input type="radio" name="attr_Coraje" value="2" />
@@ -1698,6 +1697,11 @@
 			<span></span> <input type="radio" name="attr_Coraje" value="5" />
 			<span></span>
         </div>
+    </div>
+    <div class="sheet-col" style="width:15px; line-height:90px">
+        <button type='roll' name='roll_Conroll' value='Reserva de dados 1\n/r {(@{C_C}+?{Modificador de la reserva|0})d10}>?{Difficulty|6}f1'></button>    	
+        <button type='roll' name='roll_Inroll' value='Reserva de dados 2\n/r {(@{S_I}+?{Modificador de la reserva|0})d10}>?{Difficulty|6}f1'></button>
+        <button type='roll' name='roll_Corroll' value='Reserva de dados 3\n/r {(@{Coraje}+?{Modificador de la reserva|0})d10}>?{Difficulty|6}f1'></button>
     </div>
 </div>
 
