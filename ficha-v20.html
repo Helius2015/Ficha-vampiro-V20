@@ -14,7 +14,65 @@
         <label>Concepto:</label><input type="text" name="attr_Concepto" />
     </div>
     <div class="sheet-col">
-        <label>Clan:</label><input type="text" name="attr_Clan" />
+        <label>Clan:</label>
+            <select name="attr_Clan" style="width:155px">
+                <option value="0" selected></option>
+				<option>Assamitas</option>
+				<option>Brujah</option>
+				<option>Gangrel</option>
+				<option>Giovanni</option>
+				<option>Lasombra</option>
+				<option>Malkavian</option>
+				<option>Nosferatu</option>
+				<option>Ravnos</option>
+                <option>Seguidores de Set</option>
+                <option>Toreador</option>
+                <option>Tremere</option>
+                <option>Tzimisce</option>
+                <option>Ventrue</option>
+                <option>Baali</option>
+                <option>Gárgolas</option>
+                <option>Heraldos de las calaveras</option>
+                <option>Hermanos de sangre</option>
+                <option>Hijas de la Cacofonía</option>
+                <option>Kiasyd</option>
+                <option>Nagaraja</option>
+                <option>Salubri</option>
+                <option>Samedi</option>
+                <option>Verdaderos Brujah</option>
+                <option>Ahrimanes</option>
+                <option>Anda</option>
+                <option>Capadocios</option>
+                <option>Hijos de Osiris</option>
+                <option>Lhiannan</option>
+                <option>Noiad</option>
+                <option>Assamita Antitribu</option>
+                <option>Gangrel Rurales</option>
+                <option>Gangrel Urbanos</option>
+                <option>Malkavian Antitribu</option>
+                <option>Nosferatu Antitribu</option>
+                <option>Pander</option>
+                <option>Ravnos Antitribu</option>
+                <option>Salubri Antitribu</option>
+                <option>Serpientes de la Luz</option>
+                <option>Toreador Antitribu</option>
+                <option>Tremere Antitribu</option>
+                <option>Ventrue Antitribu</option>
+                <option>Assamitas Hechiceros</option>
+                <option>Assamitas Visires</option>
+                <option>Gangrel Mariner</option>
+                <option>Angelis Ater</option>
+                <option>Lasombra Antitribu</option>
+                <option>Ravnos Brahmanes</option>
+                <option>Wu Zao</option>
+                <option>Daitya</option>
+                <option>Guerreros Setitas</option>
+                <option>Tlacique</option>
+                <option>Tremere Telyavos</option>
+                <option>Tzimisce Koldun</option>
+                <option>Viejo clan Tzimisce</option>
+                <option>Caitiff</option>
+			</select>
         <label>Generación:</label><input type="text" name="attr_Generacion" />
         <label>Sire:</label><input type="text" name="attr_Sire" />
     </div>
@@ -43,7 +101,7 @@
     </div>
     <div class="sheet-col" style="width:150px">
             <input type="radio" name="attr_Fuerza" value="1" checked="checked" />
-        	<span></span> <input type="radio" name="attr_Fuerza" value="2" />
+            <span></span> <input type="radio" name="attr_Fuerza" value="2" />
 			<span></span> <input type="radio" name="attr_Fuerza" value="3" />
 			<span></span> <input type="radio" name="attr_Fuerza" value="4" />
 			<span></span> <input type="radio" name="attr_Fuerza" value="5" />
@@ -1145,20 +1203,6 @@
 
 <hr/>
 <div class="sheet-col" style="width:270px; ">
-    <h3 align="center">Iniciativa
-    <button type='roll' name='roll_Inici' value='/em @{selected|token_name} saca un [[1d10+(@{Astucia}+@{Destreza}|&{tracker})]] para iniciativa'></button>
-    </h3>
-</div>
-
-<div class="sheet-col" style="width:270px; ">
-    <h3 align="center">Tirada+Habilidad
-    <button type='roll' name='roll_Inici' value='/r {(?{Introduce Característica|1} + ?{Introduce Habilidad|1})d10}>?{Introduce Dificultad|6}f1'></button>
-    </h3>
-</div>
-
-
-<hr>
-<div class="sheet-col" style="width:270px; ">
     <h3 align="center">Otros Rasgos</h3>
     <div class="sheet-col" style="width:105px">
         <input type="text" name="attr_Otro1" style="width:105px"/>
@@ -1528,20 +1572,14 @@
 	
     <h5>Puntos por turno <input type="number" name="BPPT" style="width:35px"/></h5>
     <br>
-    <div class="sheet-row">
-        <h3 align="center">Debilidad</h3>
-        <textarea name="attr_Debilidad" style="width:245px; height:70px"></textarea>
-    </div>
-    
-    <br>
-	
+    	
     <h3 >Reserva de Dados</h3>
-        <div align="left" style="margin:0px 0px 0px 40px"><b >Atributo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Habilidad</b ></div>
+      <div align="left" style="margin:0px 0px 0px 0px 40px"><b >Atributo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Habilidad</b ></div>
         <div align="left">
             <input type="checkbox" name="attr_DP1Spec" class="DP1Spec"/><span></span>
             <div class="DP1">
                 <select name="attr_DPAtt1" style="width:95px">
-				<option value="0" selected></option>
+        		<option value="0" selected></option>
 				<option value="@{Fuerza}">Fuerza</option>
 				<option value="@{Destreza}">Destreza</option>
 				<option value="@{Resistencia}">Resistencia</option>
@@ -1600,7 +1638,7 @@
                 <button type='roll' name='roll_DP1roll' value='Dice Pool 1\n/r {(@{DPAtt1}+@{DPAbi1}+?{Modificador de reserva|0})d10}>?{Dificultad|6}f1'></button>
             </div>
             <div class="DP1wSpec">
-                <select name="attr_DPAtt2" style="width:95px">
+                <select name="attr_DPAtt1" style="width:95px">
 				<option value="0" selected></option>
 				<option value="@{Fuerza}">Fuerza</option>
 				<option value="@{Destreza}">Destreza</option>
@@ -1613,7 +1651,7 @@
 				<option value="@{Percepcion}">Percepción</option>
 				</select>
 				
-                <select name="attr_DPAbi2" style="width:100px"> 
+                <select name="attr_DPAbi1" style="width:100px"> 
     			<option value="0" selected></option>
 				<option value="@{Alerta}">Alerta</option>
 				<option value="@{Atletismo}">Atletismo</option>
@@ -1656,16 +1694,16 @@
                 <option value="@{Otro9}">Otro9</option>
                 <option value="@{Otro10}">Otro10</option>
 				</select>
-                <button type='roll' name='roll_DP1roll' value='Dice Pool 1\n/r {(@{DPAtt1}+@{DPAbi1}+?{Modificador de reserva|0})d10!}>?{Dificultad|6}f1'></button>
+                    <button type='roll' name='roll_DP1roll' value='Dice Pool 1\n/r {(@{DPAtt1}+@{DPAbi1}+?{Modificador de reserva|0})d10!}>?{Dificultad|6}f1'></button>
             </div><br>
             
             <input type="checkbox" name="attr_DP2Spec" class="DP2Spec"/><span></span>
             <div class="DP2">
-                <select name="attr_DPAtt3" style="width:95px">
+                <select name="attr_DPAtt2" style="width:95px">
 				<option value="0" selected></option>
 				<option value="@{Fuerza}">Fuerza</option>
 				<option value="@{Destreza}">Destreza</option> 
-				<option value="@{Resistenca}">Resistenca</option>
+				<option value="@{Resistencia}">Resistenca</option>
 				<option value="@{Carisma}">Carisma</option>
 				<option value="@{Manipulacion}">Manipulación</option>
 				<option value="@{Apariencia}">Apariencia</option>
@@ -1674,7 +1712,7 @@
 				<option value="@{Percepcion}">Percepción</option>
 				</select>
 				
-                <select name="attr_DPAbi3" style="width:100px"> 
+                <select name="attr_DPAbi2" style="width:100px"> 
 				<option value="0" selected></option>
     			<option value="@{Alerta}">Alerta</option>
     			<option value="@{Atletismo}">Atletismo</option>
@@ -1722,11 +1760,11 @@
             </div>
 			
             <div class="DP2wSpec">
-                <select name="attr_DPAtt4" style="width:95px">
+                <select name="attr_DPAtt2" style="width:95px">
 				<option value="0" selected></option>
 				<option value="@{Fuerza}">Fuerza</option>
 				<option value="@{Destreza}">Destreza</option> 
-				<option value="@{Resistenca}">Resistenca</option>
+				<option value="@{Resistencia}">Resistenca</option>
 				<option value="@{Carisma}">Carisma</option>
 				<option value="@{Manipulacion}">Manipulación</option>
 				<option value="@{Apariencia}">Apariencia</option>
@@ -1735,7 +1773,7 @@
 				<option value="@{Percepcion}">Percepción</option>
 				</select>
 				
-                <select name="attr_DPAbi4" style="width:100px">
+                <select name="attr_DPAbi2" style="width:100px">
 				<option value="0" selected></option>
     			<option value="@{Alerta}">Alerta</option>
     			<option value="@{Atletismo}">Atletismo</option>
@@ -1784,11 +1822,315 @@
             <input type="checkbox" name="attr_DP3Spec" class="DP3Spec"/><span></span>
 			
             <div class="DP3">
+                <select name="attr_DPAtt3" style="width:95px">
+				<option value="0" selected></option>
+				<option value="@{Fuerza}">Fuerza</option>
+				<option value="@{Destreza}">Destreza</option> 
+				<option value="@{Resistencia}">Resistenca</option>
+				<option value="@{Carisma}">Carisma</option>
+				<option value="@{Manipulacion}">Manipulación</option>
+				<option value="@{Apariencia}">Apariencia</option>
+				<option value="@{Inteligencia}">Inteligencia</option>
+				<option value="@{Astucia}">Astucia</option>
+				<option value="@{Percepcion}">Percepción</option>
+				</select>
+				
+                <select name="attr_DPAbi3" style="width:100px">
+				<option value="0" selected></option>
+    			<option value="@{Alerta}">Alerta</option>
+    			<option value="@{Atletismo}">Atletismo</option>
+				<option value="@{Callejeo}">Callejeo</option>
+				<option value="@{Consciencia}">Consciencia</option>
+				<option value="@{Empatia}">Empatía</option>
+				<option value="@{Expresion}">Expresión</option>
+				<option value="@{Intimidacion}">Intimidación</option>
+				<option value="@{Liderazgo}">Liderazgo</option>
+				<option value="@{Pelea}">Pelea</option>
+				<option value="@{Subterfugio}">Subterfugio</option>
+				<option value="@{Armas_Fuego}">A. de Fuego</option>
+				<option value="@{Artesania}">Artesanía</option>
+				<option value="@{Conducir}">Conducir</option> 
+				<option value="@{Etiqueta}">Etiqueta</option> 
+				<option value="@{Interpretacion}">Interpretación</option>
+				<option value="@{Latrocinio}">Latrocinio</option> 
+				<option value="@{Pelea_armas}">P. con armas</option>
+				<option value="@{Sigilo}">Sigilo</option>
+				<option value="@{Supervivencia}">Supervivencia</option>
+				<option value="@{Trato_con_animales}">Trato animales</option> 
+				<option value="@{Academicismo}">Academicismo</option>
+				<option value="@{Ciencias}">Ciencias</option>
+				<option value="@{Finanzas}">Finanzas</option>
+				<option value="@{Informatica}">Informática</option>
+				<option value="@{Investigacion}">Investigación</option>
+				<option value="@{Leyes}">Leyes</option>
+				<option value="@{Medicina}">Medicina</option>
+				<option value="@{Ocultismo}">Ocultismo</option>
+				<option value="@{Politica}">Política</option>
+				<option value="@{Tecnologia}">Tecnología</option>
+				<option value="@{Otro1}">Otro1</option>
+				<option value="@{Otro2}">Otro2</option> 
+				<option value="@{Otro3}">Otro3</option> 
+				<option value="@{Otro4}">Otro4</option>
+				<option value="@{Otro5}">Otro5</option>
+				<option value="@{Otro6}">Otro6</option>
+				<option value="@{Otro7}">Otro7</option>
+				<option value="@{Otro8}">Otro8</option>
+                <option value="@{Otro9}">Otro9</option>
+                <option value="@{Otro10}">Otro10</option>
+				</select>
+				
+                <button type='roll' name='roll_DP3roll' value='Dice Pool 3\n/r {(@{DPAtt3}+@{DPAbi3}+?{Modificador de la reserva|0})d10}>?{Dificultad|6}f1'></button>
+            </div>
+			
+            <div class="DP3wSpec">
+                <select name="attr_DPAtt3" style="width:95px">
+				<option value="0" selected></option>
+				<option value="@{Fuerza}">Fuerza</option>
+				<option value="@{Destreza}">Destreza</option> 
+				<option value="@{Resistencia}">Resistenca</option>
+				<option value="@{Carisma}">Carisma</option>
+				<option value="@{Manipulacion}">Manipulación</option>
+				<option value="@{Apariencia}">Apariencia</option>
+				<option value="@{Inteligencia}">Inteligencia</option>
+				<option value="@{Astucia}">Astucia</option>
+				<option value="@{Percepcion}">Percepción</option>
+				</select>
+				
+                <select name="attr_DPAbi3" style="width:100px">
+				<option value="0" selected></option>
+    			<option value="@{Alerta}">Alerta</option>
+    			<option value="@{Atletismo}">Atletismo</option>
+				<option value="@{Callejeo}">Callejeo</option>
+				<option value="@{Consciencia}">Consciencia</option>
+				<option value="@{Empatia}">Empatía</option>
+				<option value="@{Expresion}">Expresión</option>
+				<option value="@{Intimidacion}">Intimidación</option>
+				<option value="@{Liderazgo}">Liderazgo</option>
+				<option value="@{Pelea}">Pelea</option>
+				<option value="@{Subterfugio}">Subterfugio</option>
+				<option value="@{Armas_Fuego}">A. de Fuego</option>
+				<option value="@{Artesania}">Artesanía</option>
+				<option value="@{Conducir}">Conducir</option> 
+				<option value="@{Etiqueta}">Etiqueta</option> 
+				<option value="@{Interpretacion}">Interpretación</option>
+				<option value="@{Latrocinio}">Latrocinio</option> 
+				<option value="@{Pelea_armas}">P. con armas</option>
+				<option value="@{Sigilo}">Sigilo</option>
+				<option value="@{Supervivencia}">Supervivencia</option>
+				<option value="@{Trato_con_animales}">Trato animales</option> 
+				<option value="@{Academicismo}">Academicismo</option>
+				<option value="@{Ciencias}">Ciencias</option>
+				<option value="@{Finanzas}">Finanzas</option>
+				<option value="@{Informatica}">Informática</option>
+				<option value="@{Investigacion}">Investigación</option>
+				<option value="@{Leyes}">Leyes</option>
+				<option value="@{Medicina}">Medicina</option>
+				<option value="@{Ocultismo}">Ocultismo</option>
+				<option value="@{Politica}">Política</option>
+				<option value="@{Tecnologia}">Tecnología</option>
+				<option value="@{Otro1}">Otro1</option>
+				<option value="@{Otro2}">Otro2</option> 
+				<option value="@{Otro3}">Otro3</option> 
+				<option value="@{Otro4}">Otro4</option>
+				<option value="@{Otro5}">Otro5</option>
+				<option value="@{Otro6}">Otro6</option>
+				<option value="@{Otro7}">Otro7</option>
+				<option value="@{Otro8}">Otro8</option>
+                <option value="@{Otro9}">Otro9</option>
+                <option value="@{Otro10}">Otro10</option>
+				</select>
+                <button type='roll' name='roll_DP3roll' value='Dice Pool 3\n/r {(@{DPAtt3}+@{DPAbi3}+?{Modificador de la reserva|0})d10!}>?{Dificultad|6}f1'></button>
+            </div><br>
+            
+            <input type="checkbox" name="attr_DP4Spec" class="DP4Spec"/><span></span>
+            <div class="DP4">
+                <select name="attr_DPAtt4" style="width:95px">
+				<option value="0" selected></option>
+				<option value="@{Fuerza}">Fuerza</option>
+				<option value="@{Destreza}">Destreza</option> 
+				<option value="@{Resistencia}">Resistenca</option>
+				<option value="@{Carisma}">Carisma</option>
+				<option value="@{Manipulacion}">Manipulación</option>
+				<option value="@{Apariencia}">Apariencia</option>
+				<option value="@{Inteligencia}">Inteligencia</option>
+				<option value="@{Astucia}">Astucia</option>
+				<option value="@{Percepcion}">Percepción</option>
+				</select>
+				
+                <select name="attr_DPAbi4" style="width:100px"> 
+				<option value="0" selected></option>
+    			<option value="@{Alerta}">Alerta</option>
+    			<option value="@{Atletismo}">Atletismo</option>
+				<option value="@{Callejeo}">Callejeo</option>
+				<option value="@{Consciencia}">Consciencia</option>
+				<option value="@{Empatia}">Empatía</option>
+				<option value="@{Expresion}">Expresión</option>
+				<option value="@{Intimidacion}">Intimidación</option>
+				<option value="@{Liderazgo}">Liderazgo</option>
+				<option value="@{Pelea}">Pelea</option>
+				<option value="@{Subterfugio}">Subterfugio</option>
+				<option value="@{Armas_Fuego}">A. de Fuego</option>
+				<option value="@{Artesania}">Artesanía</option>
+				<option value="@{Conducir}">Conducir</option> 
+				<option value="@{Etiqueta}">Etiqueta</option> 
+				<option value="@{Interpretacion}">Interpretación</option>
+				<option value="@{Latrocinio}">Latrocinio</option> 
+				<option value="@{Pelea_armas}">P. con armas</option>
+				<option value="@{Sigilo}">Sigilo</option>
+				<option value="@{Supervivencia}">Supervivencia</option>
+				<option value="@{Trato_con_animales}">Trato animales</option> 
+				<option value="@{Academicismo}">Academicismo</option>
+				<option value="@{Ciencias}">Ciencias</option>
+				<option value="@{Finanzas}">Finanzas</option>
+				<option value="@{Informatica}">Informática</option>
+				<option value="@{Investigacion}">Investigación</option>
+				<option value="@{Leyes}">Leyes</option>
+				<option value="@{Medicina}">Medicina</option>
+				<option value="@{Ocultismo}">Ocultismo</option>
+				<option value="@{Politica}">Política</option>
+				<option value="@{Tecnologia}">Tecnología</option>
+				<option value="@{Otro1}">Otro1</option>
+				<option value="@{Otro2}">Otro2</option> 
+				<option value="@{Otro3}">Otro3</option> 
+				<option value="@{Otro4}">Otro4</option>
+				<option value="@{Otro5}">Otro5</option>
+				<option value="@{Otro6}">Otro6</option>
+				<option value="@{Otro7}">Otro7</option>
+				<option value="@{Otro8}">Otro8</option>
+                <option value="@{Otro9}">Otro9</option>
+                <option value="@{Otro10}">Otro10</option>
+				</select>
+                <button type='roll' name='roll_DP4roll' value='Dice Pool 4\n/r {(@{DPAtt4}+@{DPAbi4}+?{Modificador de la reserva|0})d10}>?{Dificultad|6}f1'></button>
+            </div>
+			
+            <div class="DP4wSpec">
+                <select name="attr_DPAtt4" style="width:95px">
+				<option value="0" selected></option>
+				<option value="@{Fuerza}">Fuerza</option>
+				<option value="@{Destreza}">Destreza</option> 
+				<option value="@{Resistencia}">Resistenca</option>
+				<option value="@{Carisma}">Carisma</option>
+				<option value="@{Manipulacion}">Manipulación</option>
+				<option value="@{Apariencia}">Apariencia</option>
+				<option value="@{Inteligencia}">Inteligencia</option>
+				<option value="@{Astucia}">Astucia</option>
+				<option value="@{Percepcion}">Percepción</option>
+				</select>
+				
+                <select name="attr_DPAbi4" style="width:100px"> 
+				<option value="0" selected></option>
+    			<option value="@{Alerta}">Alerta</option>
+    			<option value="@{Atletismo}">Atletismo</option>
+				<option value="@{Callejeo}">Callejeo</option>
+				<option value="@{Consciencia}">Consciencia</option>
+				<option value="@{Empatia}">Empatía</option>
+				<option value="@{Expresion}">Expresión</option>
+				<option value="@{Intimidacion}">Intimidación</option>
+				<option value="@{Liderazgo}">Liderazgo</option>
+				<option value="@{Pelea}">Pelea</option>
+				<option value="@{Subterfugio}">Subterfugio</option>
+				<option value="@{Armas_Fuego}">A. de Fuego</option>
+				<option value="@{Artesania}">Artesanía</option>
+				<option value="@{Conducir}">Conducir</option> 
+				<option value="@{Etiqueta}">Etiqueta</option> 
+				<option value="@{Interpretacion}">Interpretación</option>
+				<option value="@{Latrocinio}">Latrocinio</option> 
+				<option value="@{Pelea_armas}">P. con armas</option>
+				<option value="@{Sigilo}">Sigilo</option>
+				<option value="@{Supervivencia}">Supervivencia</option>
+				<option value="@{Trato_con_animales}">Trato animales</option> 
+				<option value="@{Academicismo}">Academicismo</option>
+				<option value="@{Ciencias}">Ciencias</option>
+				<option value="@{Finanzas}">Finanzas</option>
+				<option value="@{Informatica}">Informática</option>
+				<option value="@{Investigacion}">Investigación</option>
+				<option value="@{Leyes}">Leyes</option>
+				<option value="@{Medicina}">Medicina</option>
+				<option value="@{Ocultismo}">Ocultismo</option>
+				<option value="@{Politica}">Política</option>
+				<option value="@{Tecnologia}">Tecnología</option>
+				<option value="@{Otro1}">Otro1</option>
+				<option value="@{Otro2}">Otro2</option> 
+				<option value="@{Otro3}">Otro3</option> 
+				<option value="@{Otro4}">Otro4</option>
+				<option value="@{Otro5}">Otro5</option>
+				<option value="@{Otro6}">Otro6</option>
+				<option value="@{Otro7}">Otro7</option>
+				<option value="@{Otro8}">Otro8</option>
+                <option value="@{Otro9}">Otro9</option>
+                <option value="@{Otro10}">Otro10</option>
+				</select>
+				
+                <button type='roll' name='roll_DP4roll' value='Dice Pool 4\n/r {(@{DPAtt4}+@{DPAbi4}+?{Modificador de la reserva|0})d10!}>?{Dificultad|6}f1'></button>
+            </div><br>
+            
+            <input type="checkbox" name="attr_DP5Spec" class="DP5Spec"/><span></span>
+            <div class="DP5">
                 <select name="attr_DPAtt5" style="width:95px">
 				<option value="0" selected></option>
 				<option value="@{Fuerza}">Fuerza</option>
 				<option value="@{Destreza}">Destreza</option> 
-				<option value="@{Resistenca}">Resistenca</option>
+				<option value="@{Resistencia}">Resistenca</option>
+				<option value="@{Carisma}">Carisma</option>
+				<option value="@{Manipulacion}">Manipulación</option>
+				<option value="@{Apariencia}">Apariencia</option>
+				<option value="@{Inteligencia}">Inteligencia</option>
+				<option value="@{Astucia}">Astucia</option>
+				<option value="@{Percepcion}">Percepción</option>
+				</select>
+				
+                <select name="attr_DPAbi5" style="width:100px"> 
+				<option value="0" selected></option>
+    			<option value="@{Alerta}">Alerta</option>
+    			<option value="@{Atletismo}">Atletismo</option>
+				<option value="@{Callejeo}">Callejeo</option>
+				<option value="@{Consciencia}">Consciencia</option>
+				<option value="@{Empatia}">Empatía</option>
+				<option value="@{Expresion}">Expresión</option>
+				<option value="@{Intimidacion}">Intimidación</option>
+				<option value="@{Liderazgo}">Liderazgo</option>
+				<option value="@{Pelea}">Pelea</option>
+				<option value="@{Subterfugio}">Subterfugio</option>
+				<option value="@{Armas_Fuego}">A. de Fuego</option>
+				<option value="@{Artesania}">Artesanía</option>
+				<option value="@{Conducir}">Conducir</option> 
+				<option value="@{Etiqueta}">Etiqueta</option> 
+				<option value="@{Interpretacion}">Interpretación</option>
+				<option value="@{Latrocinio}">Latrocinio</option> 
+				<option value="@{Pelea_armas}">P. con armas</option>
+				<option value="@{Sigilo}">Sigilo</option>
+				<option value="@{Supervivencia}">Supervivencia</option>
+				<option value="@{Trato_con_animales}">Trato animales</option> 
+				<option value="@{Academicismo}">Academicismo</option>
+				<option value="@{Ciencias}">Ciencias</option>
+				<option value="@{Finanzas}">Finanzas</option>
+				<option value="@{Informatica}">Informática</option>
+				<option value="@{Investigacion}">Investigación</option>
+				<option value="@{Leyes}">Leyes</option>
+				<option value="@{Medicina}">Medicina</option>
+				<option value="@{Ocultismo}">Ocultismo</option>
+				<option value="@{Politica}">Política</option>
+				<option value="@{Tecnologia}">Tecnología</option>
+				<option value="@{Otro1}">Otro1</option>
+				<option value="@{Otro2}">Otro2</option> 
+				<option value="@{Otro3}">Otro3</option> 
+				<option value="@{Otro4}">Otro4</option>
+				<option value="@{Otro5}">Otro5</option>
+				<option value="@{Otro6}">Otro6</option>
+				<option value="@{Otro7}">Otro7</option>
+				<option value="@{Otro8}">Otro8</option>
+                <option value="@{Otro9}">Otro9</option>
+                <option value="@{Otro10}">Otro10</option>
+				</select>
+                <button type='roll' name='roll_DP5roll' value='Dice Pool 5\n/r {(@{DPAtt5}+@{DPAbi5}+?{Modificador de la reserva|0})d10}>?{Dificultad|6}f1'></button>
+            </div>
+			
+            <div class="DP5wSpec">
+                <select name="attr_DPAtt5" style="width:95px">
+				<option value="0" selected></option>
+				<option value="@{Fuerza}">Fuerza</option>
+				<option value="@{Destreza}">Destreza</option> 
+				<option value="@{Resistencia}">Resistenca</option>
 				<option value="@{Carisma}">Carisma</option>
 				<option value="@{Manipulacion}">Manipulación</option>
 				<option value="@{Apariencia}">Apariencia</option>
@@ -1840,313 +2182,14 @@
                 <option value="@{Otro9}">Otro9</option>
                 <option value="@{Otro10}">Otro10</option>
 				</select>
-				
-                <button type='roll' name='roll_DP3roll' value='Dice Pool 3\n/r {(@{DPAtt3}+@{DPAbi3}+?{Modificador de la reserva|0})d10}>?{Dificultad|6}f1'></button>
-            </div>
-			
-            <div class="DP3wSpec">
-                <select name="attr_DPAtt6" style="width:95px">
-				<option value="0" selected></option>
-				<option value="@{Fuerza}">Fuerza</option>
-				<option value="@{Destreza}">Destreza</option> 
-				<option value="@{Resistenca}">Resistenca</option>
-				<option value="@{Carisma}">Carisma</option>
-				<option value="@{Manipulacion}">Manipulación</option>
-				<option value="@{Apariencia}">Apariencia</option>
-				<option value="@{Inteligencia}">Inteligencia</option>
-				<option value="@{Astucia}">Astucia</option>
-				<option value="@{Percepcion}">Percepción</option>
-				</select>
-				
-                <select name="attr_DPAbi6" style="width:100px">
-				<option value="0" selected></option>
-    			<option value="@{Alerta}">Alerta</option>
-    			<option value="@{Atletismo}">Atletismo</option>
-				<option value="@{Callejeo}">Callejeo</option>
-				<option value="@{Consciencia}">Consciencia</option>
-				<option value="@{Empatia}">Empatía</option>
-				<option value="@{Expresion}">Expresión</option>
-				<option value="@{Intimidacion}">Intimidación</option>
-				<option value="@{Liderazgo}">Liderazgo</option>
-				<option value="@{Pelea}">Pelea</option>
-				<option value="@{Subterfugio}">Subterfugio</option>
-				<option value="@{Armas_Fuego}">A. de Fuego</option>
-				<option value="@{Artesania}">Artesanía</option>
-				<option value="@{Conducir}">Conducir</option> 
-				<option value="@{Etiqueta}">Etiqueta</option> 
-				<option value="@{Interpretacion}">Interpretación</option>
-				<option value="@{Latrocinio}">Latrocinio</option> 
-				<option value="@{Pelea_armas}">P. con armas</option>
-				<option value="@{Sigilo}">Sigilo</option>
-				<option value="@{Supervivencia}">Supervivencia</option>
-				<option value="@{Trato_con_animales}">Trato animales</option> 
-				<option value="@{Academicismo}">Academicismo</option>
-				<option value="@{Ciencias}">Ciencias</option>
-				<option value="@{Finanzas}">Finanzas</option>
-				<option value="@{Informatica}">Informática</option>
-				<option value="@{Investigacion}">Investigación</option>
-				<option value="@{Leyes}">Leyes</option>
-				<option value="@{Medicina}">Medicina</option>
-				<option value="@{Ocultismo}">Ocultismo</option>
-				<option value="@{Politica}">Política</option>
-				<option value="@{Tecnologia}">Tecnología</option>
-				<option value="@{Otro1}">Otro1</option>
-				<option value="@{Otro2}">Otro2</option> 
-				<option value="@{Otro3}">Otro3</option> 
-				<option value="@{Otro4}">Otro4</option>
-				<option value="@{Otro5}">Otro5</option>
-				<option value="@{Otro6}">Otro6</option>
-				<option value="@{Otro7}">Otro7</option>
-				<option value="@{Otro8}">Otro8</option>
-                <option value="@{Otro9}">Otro9</option>
-                <option value="@{Otro10}">Otro10</option>
-				</select>
-                <button type='roll' name='roll_DP3roll' value='Dice Pool 3\n/r {(@{DPAtt3}+@{DPAbi3}+?{Modificador de la reserva|0})d10!}>?{Dificultad|6}f1'></button>
-            </div><br>
-            
-            <input type="checkbox" name="attr_DP4Spec" class="DP4Spec"/><span></span>
-            <div class="DP4">
-                <select name="attr_DPAtt7" style="width:95px">
-				<option value="0" selected></option>
-				<option value="@{Fuerza}">Fuerza</option>
-				<option value="@{Destreza}">Destreza</option> 
-				<option value="@{Resistenca}">Resistenca</option>
-				<option value="@{Carisma}">Carisma</option>
-				<option value="@{Manipulacion}">Manipulación</option>
-				<option value="@{Apariencia}">Apariencia</option>
-				<option value="@{Inteligencia}">Inteligencia</option>
-				<option value="@{Astucia}">Astucia</option>
-				<option value="@{Percepcion}">Percepción</option>
-				</select>
-				
-                <select name="attr_DPAbi7" style="width:100px"> 
-				<option value="0" selected></option>
-    			<option value="@{Alerta}">Alerta</option>
-    			<option value="@{Atletismo}">Atletismo</option>
-				<option value="@{Callejeo}">Callejeo</option>
-				<option value="@{Consciencia}">Consciencia</option>
-				<option value="@{Empatia}">Empatía</option>
-				<option value="@{Expresion}">Expresión</option>
-				<option value="@{Intimidacion}">Intimidación</option>
-				<option value="@{Liderazgo}">Liderazgo</option>
-				<option value="@{Pelea}">Pelea</option>
-				<option value="@{Subterfugio}">Subterfugio</option>
-				<option value="@{Armas_Fuego}">A. de Fuego</option>
-				<option value="@{Artesania}">Artesanía</option>
-				<option value="@{Conducir}">Conducir</option> 
-				<option value="@{Etiqueta}">Etiqueta</option> 
-				<option value="@{Interpretacion}">Interpretación</option>
-				<option value="@{Latrocinio}">Latrocinio</option> 
-				<option value="@{Pelea_armas}">P. con armas</option>
-				<option value="@{Sigilo}">Sigilo</option>
-				<option value="@{Supervivencia}">Supervivencia</option>
-				<option value="@{Trato_con_animales}">Trato animales</option> 
-				<option value="@{Academicismo}">Academicismo</option>
-				<option value="@{Ciencias}">Ciencias</option>
-				<option value="@{Finanzas}">Finanzas</option>
-				<option value="@{Informatica}">Informática</option>
-				<option value="@{Investigacion}">Investigación</option>
-				<option value="@{Leyes}">Leyes</option>
-				<option value="@{Medicina}">Medicina</option>
-				<option value="@{Ocultismo}">Ocultismo</option>
-				<option value="@{Politica}">Política</option>
-				<option value="@{Tecnologia}">Tecnología</option>
-				<option value="@{Otro1}">Otro1</option>
-				<option value="@{Otro2}">Otro2</option> 
-				<option value="@{Otro3}">Otro3</option> 
-				<option value="@{Otro4}">Otro4</option>
-				<option value="@{Otro5}">Otro5</option>
-				<option value="@{Otro6}">Otro6</option>
-				<option value="@{Otro7}">Otro7</option>
-				<option value="@{Otro8}">Otro8</option>
-                <option value="@{Otro9}">Otro9</option>
-                <option value="@{Otro10}">Otro10</option>
-				</select>
-                <button type='roll' name='roll_DP4roll' value='Dice Pool 4\n/r {(@{DPAtt4}+@{DPAbi4}+?{Modificador de la reserva|0})d10}>?{Dificultad|6}f1'></button>
-            </div>
-			
-            <div class="DP4wSpec">
-                <select name="attr_DPAtt8" style="width:95px">
-				<option value="0" selected></option>
-				<option value="@{Fuerza}">Fuerza</option>
-				<option value="@{Destreza}">Destreza</option> 
-				<option value="@{Resistenca}">Resistenca</option>
-				<option value="@{Carisma}">Carisma</option>
-				<option value="@{Manipulacion}">Manipulación</option>
-				<option value="@{Apariencia}">Apariencia</option>
-				<option value="@{Inteligencia}">Inteligencia</option>
-				<option value="@{Astucia}">Astucia</option>
-				<option value="@{Percepcion}">Percepción</option>
-				</select>
-				
-                <select name="attr_DPAbi8" style="width:100px"> 
-				<option value="0" selected></option>
-    			<option value="@{Alerta}">Alerta</option>
-    			<option value="@{Atletismo}">Atletismo</option>
-				<option value="@{Callejeo}">Callejeo</option>
-				<option value="@{Consciencia}">Consciencia</option>
-				<option value="@{Empatia}">Empatía</option>
-				<option value="@{Expresion}">Expresión</option>
-				<option value="@{Intimidacion}">Intimidación</option>
-				<option value="@{Liderazgo}">Liderazgo</option>
-				<option value="@{Pelea}">Pelea</option>
-				<option value="@{Subterfugio}">Subterfugio</option>
-				<option value="@{Armas_Fuego}">A. de Fuego</option>
-				<option value="@{Artesania}">Artesanía</option>
-				<option value="@{Conducir}">Conducir</option> 
-				<option value="@{Etiqueta}">Etiqueta</option> 
-				<option value="@{Interpretacion}">Interpretación</option>
-				<option value="@{Latrocinio}">Latrocinio</option> 
-				<option value="@{Pelea_armas}">P. con armas</option>
-				<option value="@{Sigilo}">Sigilo</option>
-				<option value="@{Supervivencia}">Supervivencia</option>
-				<option value="@{Trato_con_animales}">Trato animales</option> 
-				<option value="@{Academicismo}">Academicismo</option>
-				<option value="@{Ciencias}">Ciencias</option>
-				<option value="@{Finanzas}">Finanzas</option>
-				<option value="@{Informatica}">Informática</option>
-				<option value="@{Investigacion}">Investigación</option>
-				<option value="@{Leyes}">Leyes</option>
-				<option value="@{Medicina}">Medicina</option>
-				<option value="@{Ocultismo}">Ocultismo</option>
-				<option value="@{Politica}">Política</option>
-				<option value="@{Tecnologia}">Tecnología</option>
-				<option value="@{Otro1}">Otro1</option>
-				<option value="@{Otro2}">Otro2</option> 
-				<option value="@{Otro3}">Otro3</option> 
-				<option value="@{Otro4}">Otro4</option>
-				<option value="@{Otro5}">Otro5</option>
-				<option value="@{Otro6}">Otro6</option>
-				<option value="@{Otro7}">Otro7</option>
-				<option value="@{Otro8}">Otro8</option>
-                <option value="@{Otro9}">Otro9</option>
-                <option value="@{Otro10}">Otro10</option>
-				</select>
-				
-                <button type='roll' name='roll_DP3roll' value='Dice Pool 3\n/r {(@{DPAtt3}+@{DPAbi3}+?{Modificador de la reserva|0})d10!}>?{Dificultad|6}f1'></button>
-            </div><br>
-            
-            <input type="checkbox" name="attr_DP5Spec" class="DP5Spec"/><span></span>
-            <div class="DP5">
-                <select name="attr_DPAtt9" style="width:95px">
-				<option value="0" selected></option>
-				<option value="@{Fuerza}">Fuerza</option>
-				<option value="@{Destreza}">Destreza</option> 
-				<option value="@{Resistenca}">Resistenca</option>
-				<option value="@{Carisma}">Carisma</option>
-				<option value="@{Manipulacion}">Manipulación</option>
-				<option value="@{Apariencia}">Apariencia</option>
-				<option value="@{Inteligencia}">Inteligencia</option>
-				<option value="@{Astucia}">Astucia</option>
-				<option value="@{Percepcion}">Percepción</option>
-				</select>
-				
-                <select name="attr_DPAbi9" style="width:100px"> 
-				<option value="0" selected></option>
-    			<option value="@{Alerta}">Alerta</option>
-    			<option value="@{Atletismo}">Atletismo</option>
-				<option value="@{Callejeo}">Callejeo</option>
-				<option value="@{Consciencia}">Consciencia</option>
-				<option value="@{Empatia}">Empatía</option>
-				<option value="@{Expresion}">Expresión</option>
-				<option value="@{Intimidacion}">Intimidación</option>
-				<option value="@{Liderazgo}">Liderazgo</option>
-				<option value="@{Pelea}">Pelea</option>
-				<option value="@{Subterfugio}">Subterfugio</option>
-				<option value="@{Armas_Fuego}">A. de Fuego</option>
-				<option value="@{Artesania}">Artesanía</option>
-				<option value="@{Conducir}">Conducir</option> 
-				<option value="@{Etiqueta}">Etiqueta</option> 
-				<option value="@{Interpretacion}">Interpretación</option>
-				<option value="@{Latrocinio}">Latrocinio</option> 
-				<option value="@{Pelea_armas}">P. con armas</option>
-				<option value="@{Sigilo}">Sigilo</option>
-				<option value="@{Supervivencia}">Supervivencia</option>
-				<option value="@{Trato_con_animales}">Trato animales</option> 
-				<option value="@{Academicismo}">Academicismo</option>
-				<option value="@{Ciencias}">Ciencias</option>
-				<option value="@{Finanzas}">Finanzas</option>
-				<option value="@{Informatica}">Informática</option>
-				<option value="@{Investigacion}">Investigación</option>
-				<option value="@{Leyes}">Leyes</option>
-				<option value="@{Medicina}">Medicina</option>
-				<option value="@{Ocultismo}">Ocultismo</option>
-				<option value="@{Politica}">Política</option>
-				<option value="@{Tecnologia}">Tecnología</option>
-				<option value="@{Otro1}">Otro1</option>
-				<option value="@{Otro2}">Otro2</option> 
-				<option value="@{Otro3}">Otro3</option> 
-				<option value="@{Otro4}">Otro4</option>
-				<option value="@{Otro5}">Otro5</option>
-				<option value="@{Otro6}">Otro6</option>
-				<option value="@{Otro7}">Otro7</option>
-				<option value="@{Otro8}">Otro8</option>
-                <option value="@{Otro9}">Otro9</option>
-                <option value="@{Otro10}">Otro10</option>
-				</select>
                 <button type='roll' name='roll_DP5roll' value='Dice Pool 5\n/r {(@{DPAtt5}+@{DPAbi5}+?{Modificador de la reserva|0})d10!}>?{Dificultad|6}f1'></button>
-            </div>
-			
-            <div class="DP5wSpec">
-                <select name="attr_DPAtt10" style="width:95px">
-				<option value="0" selected></option>
-				<option value="@{Fuerza}">Fuerza</option>
-				<option value="@{Destreza}">Destreza</option> 
-				<option value="@{Resistenca}">Resistenca</option>
-				<option value="@{Carisma}">Carisma</option>
-				<option value="@{Manipulacion}">Manipulación</option>
-				<option value="@{Apariencia}">Apariencia</option>
-				<option value="@{Inteligencia}">Inteligencia</option>
-				<option value="@{Astucia}">Astucia</option>
-				<option value="@{Percepcion}">Percepción</option>
-				</select>
-				
-                <select name="attr_DPAbi10" style="width:100px">
-				<option value="0" selected></option>
-    			<option value="@{Alerta}">Alerta</option>
-    			<option value="@{Atletismo}">Atletismo</option>
-				<option value="@{Callejeo}">Callejeo</option>
-				<option value="@{Consciencia}">Consciencia</option>
-				<option value="@{Empatia}">Empatía</option>
-				<option value="@{Expresion}">Expresión</option>
-				<option value="@{Intimidacion}">Intimidación</option>
-				<option value="@{Liderazgo}">Liderazgo</option>
-				<option value="@{Pelea}">Pelea</option>
-				<option value="@{Subterfugio}">Subterfugio</option>
-				<option value="@{Armas_Fuego}">A. de Fuego</option>
-				<option value="@{Artesania}">Artesanía</option>
-				<option value="@{Conducir}">Conducir</option> 
-				<option value="@{Etiqueta}">Etiqueta</option> 
-				<option value="@{Interpretacion}">Interpretación</option>
-				<option value="@{Latrocinio}">Latrocinio</option> 
-				<option value="@{Pelea_armas}">P. con armas</option>
-				<option value="@{Sigilo}">Sigilo</option>
-				<option value="@{Supervivencia}">Supervivencia</option>
-				<option value="@{Trato_con_animales}">Trato animales</option> 
-				<option value="@{Academicismo}">Academicismo</option>
-				<option value="@{Ciencias}">Ciencias</option>
-				<option value="@{Finanzas}">Finanzas</option>
-				<option value="@{Informatica}">Informática</option>
-				<option value="@{Investigacion}">Investigación</option>
-				<option value="@{Leyes}">Leyes</option>
-				<option value="@{Medicina}">Medicina</option>
-				<option value="@{Ocultismo}">Ocultismo</option>
-				<option value="@{Politica}">Política</option>
-				<option value="@{Tecnologia}">Tecnología</option>
-				<option value="@{Otro1}">Otro1</option>
-				<option value="@{Otro2}">Otro2</option> 
-				<option value="@{Otro3}">Otro3</option> 
-				<option value="@{Otro4}">Otro4</option>
-				<option value="@{Otro5}">Otro5</option>
-				<option value="@{Otro6}">Otro6</option>
-				<option value="@{Otro7}">Otro7</option>
-				<option value="@{Otro8}">Otro8</option>
-                <option value="@{Otro9}">Otro9</option>
-                <option value="@{Otro10}">Otro10</option>
-				</select>
-                <button type='roll' name='roll_DP3roll' value='Dice Pool 3\n/r {(@{DPAtt3}+@{DPAbi3}+?{Modificador de la reserva|0})d10}>?{Dificultad|6}f1'></button>
-            </div>
+            </div><br>
         </div>
+        <div class="sheet-col" style="width:270px; ">
+    <h3 align="center">Iniciativa
+    <button type='roll' name='roll_Inici' value='/em @{selected|token_name} saca un [[1d10+(@{Astucia}+@{Destreza}|&{tracker})]] para iniciativa'></button>
+    <br>
+</div>
 </div>
 
 <div class="sheet-col" style="width:270px">
@@ -2235,6 +2278,10 @@
         <input type="text" name="attr_Experience" style="width:245px"/>
     </div>
     <br>
-     <h3 align="center">Notas</h3>
-    <textarea name="attr_notes" style="width:260px; height:120px"></textarea>
+    <div class="sheet-row">
+        <h3 align="center">Debilidad</h3>
+        <textarea name="attr_Debilidad" style="width:245px; height:70px"></textarea>
+    </div> 
 </div>
+<h3 align="center">Notas</h3>
+    <textarea name="attr_notes" style="width:800px; height:120px"></textarea>
